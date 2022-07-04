@@ -6,7 +6,7 @@ body {
     width: 100%;
     height: 100vh;
    font-family: 'Dongle', sans-serif  !important;
-   
+   background-color: #22223b;
 }
 
 .container {
@@ -19,17 +19,34 @@ body {
 
 .quote__container {
     width: 650px;
-    height: auto;
+    height: 100%;
     background: #0f0c29; /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #0f0c29, #302b63, #24243e); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #0f0c29, #302b63, #24243e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border-radius: 8px;
     box-shadow:  0px 10px 10px rgb(43 89 255 / 8%);
+    transition: 0.2s all;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-ul {
+#hello {
+    width: 90%;
+    height: 30%;
+    margin: 0 auto;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 20px;
+    border:  rgba(255, 255, 255, 0.18);
+    margin-top: 20px;
     display: flex;
-    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0px 8px 32px 0 rgb(0, 0, 0, 0.37);
+
+    
 }
 
 .btn {
@@ -40,16 +57,36 @@ ul {
     background: linear-gradient(to right, #0f0c29, #302b63, #24243e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: white;
     border-radius: 20px;
-    transition: 0.5s all;
 }
 
 .btn:hover {
     transform: scale(1.1);
 }
 
+.effect {
+    animation: text 500ms ease-in;
+}
+
+@keyframes text{
+    0%{
+        transform: scale(0);
+    }
+    90%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
 
 @media (min-width:0) and (max-width:820px) {
     .quote__container {
-        width: 90%;
+        width: 100%;
+    }
+}
+
+@media (min-width:0) and (max-width:820px) {
+    .quote__container {
+        width: 100%;
     }
 }

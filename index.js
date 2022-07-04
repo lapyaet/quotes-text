@@ -13,6 +13,7 @@ function getRandomInt() {
   const quoteProfession = document.createElement("small")
   const btnNew = document.getElementById("btn-click")
   const btnShare = document.getElementById("btn-share")
+  const animation = document.getElementById("hello")
   
   quoteProfession.classList = "text-xl"
   quoteProfession.id        = "author-prfession"
@@ -27,13 +28,16 @@ function getRandomInt() {
   const topicsDomUl = document.getElementById("topics") ;
   const topicsItems = defaultQuote["topics"]
 
-
-  for(let t of topicsItems) {
-  const topicsItem = document.createElement("li")
-  topicsItem.classList = "px-4 rounded-full bg-white text-black mr-2 mb-4"
-  topicsItem.innerText = t ;
-  topicsDomUl.append(topicsItem)
+// function of topicsItems ***********************************************************
+  function generateTopics (listDOM, items) {
+    for(let t of items) {
+      const topicsItem = document.createElement("li")
+      topicsItem.classList = "px-4 rounded-full bg-white text-black mr-2 mb-4"
+      topicsItem.innerText = t ;
+      listDOM.append(topicsItem)
+      }
   }
+  generateTopics (topicsDomUl, topicsItems)
 
 
 //  create click btn ******************************************** //
@@ -46,13 +50,8 @@ function getRandomInt() {
     quoteAuthor.append(quoteProfession)
     const topicsItems = newQuote["topics"]
     topicsDomUl.innerHTML = "";
-
-    for(let t of topicsItems) {
-      const topicsItem = document.createElement("li")
-      topicsItem.classList = "px-4 rounded-full bg-white text-black mr-2"
-      topicsItem.innerText = t ;
-      topicsDomUl.append(topicsItem)
-      }
+    generateTopics (topicsDomUl, topicsItems)
+    animation.classList.add("effect") 
   })
 
   // create share btn *******************************************************//
